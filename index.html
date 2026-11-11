@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8f6">
+  <meta name="description" content="Sebuah ucapan kecil untuk hari istimewa Puja.">
+  <title>Untuk Puja, dengan sayang ✨</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #342b32;
+      --muted: #857981;
+      --rose: #bd6f82;
+      --rose-dark: #9c5267;
+      --paper: #fffdfb;
+      --line: #f0e5e6;
+      --bg: #fff8f6;
+      --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse at 12% 15%, #f8e6e9 0, transparent 27rem),
+        radial-gradient(ellipse at 90% 70%, #f9ece2 0, transparent 30rem),
+        var(--bg);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    button { font: inherit; }
+    .page { width: min(100% - 40px, 1060px); margin: 0 auto; }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 82px;
+      border-bottom: 1px solid #342b3210;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .brand { display: flex; align-items: center; gap: 9px; color: var(--ink); font-weight: 650; }
+    .brand-mark { color: var(--rose); font-size: 18px; }
+    .top-note { letter-spacing: .04em; text-transform: none; }
+    main { padding: 58px 0 86px; }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: clamp(36px, 8vw, 100px);
+      min-height: 540px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 23px;
+      color: var(--rose-dark);
+      font-size: 12px;
+      font-weight: 650;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 25px; height: 1px; background: currentColor; content: ""; }
+    h1 {
+      max-width: 620px;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(56px, 8vw, 96px);
+      font-weight: 400;
+      letter-spacing: -.065em;
+      line-height: .98;
+    }
+    h1 em { color: var(--rose); font-weight: 400; }
+    .intro {
+      max-width: 390px;
+      margin: 24px 0 29px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    .primary-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 19px;
+      border: 0;
+      border-radius: 999px;
+      color: white;
+      background: var(--rose-dark);
+      box-shadow: 0 9px 22px #9c52672b;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .primary-button:hover { transform: translateY(-2px); background: #874357; box-shadow: 0 12px 25px #9c52673b; }
+    .primary-button:focus-visible, .close-button:focus-visible { outline: 3px solid #d59ba8; outline-offset: 4px; }
+    .button-arrow { font-size: 18px; transition: transform .2s ease; }
+    .primary-button:hover .button-arrow { transform: translateX(3px); }
+
+    .art-wrap { position: relative; display: grid; place-items: center; min-height: 430px; }
+    .art-glow {
+      position: absolute;
+      width: min(100%, 410px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #f3d9dc, #f9e9dc 70%);
+      opacity: .8;
+    }
+    .art-card {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: min(78%, 310px);
+      aspect-ratio: .79;
+      overflow: hidden;
+      border: 1px solid #ffffffbd;
+      border-radius: 160px 160px 22px 22px;
+      background: linear-gradient(155deg, #fffdfa 5%, #f9ecea 70%, #f1d9dc);
+      box-shadow: 0 30px 70px #7848531a;
+      transform: rotate(3deg);
+    }
+    .art-card::before, .art-card::after {
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      border: 1px solid #bd6f8240;
+      border-radius: 50%;
+      content: "";
+    }
+    .art-card::before { top: 42px; right: -88px; }
+    .art-card::after { bottom: 30px; left: -100px; width: 210px; height: 210px; }
+    .cake { position: relative; z-index: 1; text-align: center; }
+    .cake-flame { display: block; margin-bottom: 5px; color: #d89068; font-size: 21px; }
+    .cake-candle { width: 8px; height: 42px; margin: 0 auto -2px; border-radius: 5px 5px 0 0; background: repeating-linear-gradient(135deg, #fff 0 5px, #d98a9c 5px 9px); }
+    .cake-top { width: 132px; height: 30px; border-radius: 50%; background: #f1cdd1; box-shadow: inset 0 -7px #dfadb5; }
+    .cake-body { width: 132px; height: 62px; border-radius: 8px 8px 20px 20px; background: linear-gradient(90deg, #f8eee5, #fffaf4 50%, #f2e3dc); box-shadow: 0 13px 15px #8f596122; }
+    .cake-body::after { display: block; padding-top: 16px; color: var(--rose); content: "♡"; font-size: 24px; }
+    .art-caption {
+      position: absolute;
+      right: -5px;
+      bottom: 45px;
+      padding: 12px 17px;
+      border: 1px solid #f1e7e5;
+      border-radius: 12px;
+      background: #fffdfbe8;
+      box-shadow: 0 10px 24px #55313b12;
+      color: var(--muted);
+      font-family: var(--serif);
+      font-size: 16px;
+      font-style: italic;
+      transform: rotate(-4deg);
+    }
+    .sparkle { position: absolute; color: #c7888f; }
+    .sparkle.one { top: 57px; left: 10%; font-size: 22px; }
+    .sparkle.two { top: 104px; right: 7%; font-size: 16px; }
+    .sparkle.three { bottom: 63px; left: 12%; font-size: 14px; }
+
+    .wish-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 43px;
+      padding: 21px 10px;
+      border-top: 1px solid #342b3212;
+      border-bottom: 1px solid #342b3212;
+      color: var(--muted);
+      font-family: var(--serif);
+      font-size: 17px;
+      text-align: center;
+    }
+    .wish-strip span { color: var(--rose); }
+    footer { padding: 0 0 28px; color: #9b8e94; font-size: 12px; text-align: center; }
+
+    dialog {
+      width: min(calc(100% - 32px), 510px);
+      padding: 0;
+      border: 1px solid #f3e7e8;
+      border-radius: 22px;
+      color: var(--ink);
+      background: var(--paper);
+      box-shadow: 0 25px 90px #38232d30;
+    }
+    dialog::backdrop { background: #34262e82; backdrop-filter: blur(5px); }
+    .letter { position: relative; padding: clamp(28px, 7vw, 48px); }
+    .letter-icon { color: var(--rose); font-size: 25px; }
+    .letter h2 { margin: 18px 0 16px; font-family: var(--serif); font-size: 38px; font-weight: 400; letter-spacing: -.04em; }
+    .letter p { margin: 0 0 14px; color: var(--muted); font-size: 15px; line-height: 1.85; }
+    .letter .signoff { margin-top: 23px; color: var(--rose-dark); font-family: var(--serif); font-size: 20px; font-style: italic; }
+    .close-button { position: absolute; top: 18px; right: 18px; width: 36px; height: 36px; border: 0; border-radius: 50%; color: var(--muted); background: #f8eff0; cursor: pointer; }
+    .heart-pop {
+      position: fixed;
+      z-index: 4;
+      pointer-events: none;
+      animation: float-up 1.4s ease-out forwards;
+    }
+    @keyframes float-up { from { opacity: 0; transform: translateY(0) scale(.7) rotate(-8deg); } 15% { opacity: 1; } to { opacity: 0; transform: translateY(-130px) scale(1.25) rotate(15deg); } }
+    @media (max-width: 700px) {
+      .page { width: min(100% - 36px, 540px); }
+      .topbar { min-height: 68px; }
+      .top-note { font-size: 11px; }
+      main { padding: 43px 0 60px; }
+      .hero { grid-template-columns: 1fr; gap: 14px; min-height: 0; }
+      .hero-copy { text-align: center; }
+      .eyebrow { justify-content: center; margin-bottom: 19px; }
+      h1 { margin: 0 auto; font-size: clamp(58px, 15vw, 82px); }
+      .intro { margin: 19px auto 23px; font-size: 15px; }
+      .art-wrap { min-height: 340px; }
+      .art-glow { width: 310px; max-width: 88%; }
+      .art-card { width: 230px; }
+      .art-caption { right: 2%; bottom: 27px; }
+      .sparkle.one { top: 28px; left: 9%; }
+      .sparkle.two { top: 55px; right: 10%; }
+      .wish-strip { gap: 9px; margin-top: 28px; font-size: 15px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">♡</span> sedikit untukmu</div>
+      <div class="top-note">Hari spesial Puja ✨</div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Hari ini milikmu</p>
+          <h1 id="page-title">Selamat<br>ulang tahun,<br><em>Puja.</em></h1>
+          <p class="intro">Semoga hari ini terasa selembut hal-hal baik yang selalu kamu berikan kepada orang-orang di sekitarmu.</p>
+          <button class="primary-button" id="openLetter" type="button">
+            Buka pesan kecil <span class="button-arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+
+        <div class="art-wrap" aria-label="Ilustrasi kue ulang tahun sederhana">
+          <div class="art-glow"></div>
+          <span class="sparkle one" aria-hidden="true">✳</span>
+          <span class="sparkle two" aria-hidden="true">✦</span>
+          <span class="sparkle three" aria-hidden="true">✧</span>
+          <div class="art-card" aria-hidden="true">
+            <div class="cake">
+              <span class="cake-flame">✦</span>
+              <div class="cake-candle"></div>
+              <div class="cake-top"></div>
+              <div class="cake-body"></div>
+            </div>
+          </div>
+          <div class="art-caption">dibuat khusus untukmu</div>
+        </div>
+      </section>
+
+      <div class="wish-strip"><span>✦</span> Semoga semua hal baik menemukan jalannya kepadamu. <span>✦</span></div>
+    </main>
+
+    <footer>Dengan hangat, untuk Puja · dibuat dengan ♡</footer>
+  </div>
+
+  <dialog id="birthdayLetter" aria-labelledby="letterTitle">
+    <div class="letter">
+      <button class="close-button" id="closeLetter" type="button" aria-label="Tutup pesan">✕</button>
+      <div class="letter-icon" aria-hidden="true">✦</div>
+      <h2 id="letterTitle">Untuk Puja,</h2>
+      <p>Selamat bertambah usia! Terima kasih sudah menjadi dirimu—seseorang yang istimewa, dengan caranya sendiri.</p>
+      <p>Semoga tahun ini dipenuhi tawa yang lepas, mimpi yang pelan-pelan jadi nyata, dan banyak alasan untuk merasa bahagia. Jangan lupa merayakan dirimu hari ini, ya.</p>
+      <p class="signoff">Selamat ulang tahun ♡</p>
+    </div>
+  </dialog>
+
+  <script>
+    const letter = document.getElementById("birthdayLetter");
+    const openButton = document.getElementById("openLetter");
+    const closeButton = document.getElementById("closeLetter");
+
+    openButton.addEventListener("click", () => {
+      letter.showModal();
+      for (let i = 0; i < 7; i++) {
+        const heart = document.createElement("span");
+        heart.className = "heart-pop";
+        heart.textContent = i % 2 ? "♡" : "✦";
+        heart.style.left = `${38 + Math.random() * 24}vw`;
+        heart.style.top = `${48 + Math.random() * 12}vh`;
+        heart.style.color = i % 2 ? "#bd6f82" : "#d49a74";
+        heart.style.fontSize = `${14 + Math.random() * 15}px`;
+        document.body.appendChild(heart);
+        heart.addEventListener("animationend", () => heart.remove(), { once: true });
+      }
+    });
+    closeButton.addEventListener("click", () => letter.close());
+    letter.addEventListener("click", event => {
+      if (event.target === letter) letter.close();
+    });
+  </script>
+</body>
+</html>
